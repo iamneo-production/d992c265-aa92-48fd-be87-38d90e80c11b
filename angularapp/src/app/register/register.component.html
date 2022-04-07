@@ -1,35 +1,33 @@
 <div fxLayoutAlign="center center" fxFlexFill class="main-div">
     <mat-card fxFlex="30">
-        <mat-toolbar color="accent">Wise Deffender</mat-toolbar> 
-    <br>
-    <h2 align="center">Sign Up</h2>
-        <form fxLayoutAlign="stretch" fxLayout="column" class="login-form">
+        <mat-toolbar color="accent">SignUp</mat-toolbar> 
+        <form fxLayoutAlign="stretch" fxLayout="column"  (ngSubmit) = "onSubmit()" class="login-form">
             <mat-form-field appearance="outline">
                 <mat-label>Email</mat-label>
-                <input matInput placeholder="Email">
+                <input matInput  [(ngModel)] ="register.emailId" id="emailId" name="emailId" placeholder="Email">
             </mat-form-field>
             <mat-form-field appearance="outline">
-                <input matInput placeholder="UserName">
+                <input matInput  [(ngModel)] = "register.userName" id="userNmae" name="userName" placeholder="UserName">
                 <mat-label>UserName</mat-label>
             </mat-form-field>
             <mat-form-field appearance="outline">
                 <mat-label>Phone Number</mat-label>
-                <input matInput placeholder="PhoneNumber">
+                <input matInput  [(ngModel)] ="register.phoneNumber" id="phoneNumber" name="phoneNumber"  placeholder="PhoneNumber">
             </mat-form-field>
             <mat-form-field appearance="outline">
                 <mat-label>Password</mat-label>
-                <input matInput [type]="hide ? 'password':'text'">
+                <input matInput  [(ngModel)] ="register.password" id="password" name="password" [type]="hide ? 'password':'text'">
                 <button mat-icon-button matSuffix (click)="hide=!hide"[attr.aria-label]="'Hide Password'"[attr.aria-pressed]="hide">
                     <mat-icon>{{hide? 'visibility_off':'visibility'}}</mat-icon>
                 </button>
             </mat-form-field>
             <mat-form-field appearance="outline">
                 <mat-label>Confirm Password</mat-label>
-                <input matInput [type]="hide ? 'password' :'text'">
+                <input matInput  [(ngModel)] ="register.confirmPassword" id="confirmPassword" name="confirmPassword" [type]="hide ? 'password' :'text'">
             </mat-form-field>
-            <button (click)="login()" mat-raised-button color="primary" mat-raised-button type="submit" class="mat-button">SignUp</button>
+            <button mat-raised-button color="primary" mat-raised-button type="submit" class="mat-button">SignUp</button>
         <br/>
-        <p align="right">Already Have a Account?<a routerLink="../signin">Sign In</a></p>
+        <p align="right">Already Have a Account?<a routerLink="../sign in">Sign In</a></p>
         </form>
     </mat-card>
 </div>
